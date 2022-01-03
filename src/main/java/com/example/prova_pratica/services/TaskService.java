@@ -12,14 +12,34 @@ public class TaskService {
 
 	@Autowired
 	private TaskRepository taskRepo;
-	
-	public ResponseEntity<Task> postTask (String task) {
-		if (task.chars().count() < 10) {
-			//throw new IllegalArgumentException("Erro! Task have less 10 caracters");
+
+	public ResponseEntity<Task> postTask(String task) {
+		String newTask = task.trim();
+		char[] especialChar = {'@', 'á', 'à', 'é', 'ã', '#'
+				, '!', '$', '%', '&', '*', '(', ')', '+', '='
+				, '-', '_', '/', '?', '°', 'è', 'ª', '[', ']'
+				, '{', '}', 'º', '^', '~', '´', '`', '\\', '|'
+				, ';', '.', ',', '>', '<', '¹', '²', '³', '£'
+				, '¢', '¬'};
+
+		if (newTask.chars().count() < 10) {
 			Task t1 = new Task("Erro! Task have less 10 caracters");
 			return ResponseEntity.badRequest().body(t1);
 		}
-		Task t1 = new Task(task);
+
+		for (int i = 0; i < newTask.length(); i++) {
+			for (int j = 0; j < especialChar.length; j++) {
+				
+				if (newTask.charAt(i) == especialChar[j]) {
+					Task t1 = new Task("Erro! Task have especial caracter '"
+							+ especialChar[j] + "' ");
+					return ResponseEntity.badRequest().body(t1);
+				}
+				
+			}
+
+		}
+		Task t1 = new Task(newTask);
 		taskRepo.save(t1);
 		return ResponseEntity.ok().body(t1);
 	}
