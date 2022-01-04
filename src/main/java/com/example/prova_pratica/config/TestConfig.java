@@ -16,11 +16,11 @@ public class TestConfig implements CommandLineRunner {
 		
 		Pattern p = Pattern.compile("[a-zA-Z0-9 ]{10,}");
 
-		Matcher m = p.matcher("Vocês vão vir aqui?");
-		Matcher t = p.matcher("não sei");
-		Matcher y = p.matcher("Frase comum para teste 01234");
-		System.out.println(m.matches());
-		System.out.println(t.matches());
-		System.out.println(y.matches());
+		Matcher test1 = p.matcher("Vocês vão vir aqui?");
+		Matcher test2 = p.matcher("não sei");
+		Matcher test3 = p.matcher("Frase comum para teste 01234");
+		System.out.println(test1.matches());
+		System.out.println(test2.matches());
+		System.out.println(test3.matches());
 	}
 }
