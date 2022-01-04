@@ -1,0 +1,35 @@
+Requisições testadas: 
+
+/// ACEITAS ///
+
+Ir na padaria comprar bolo
+
+Comecar a escrever meu livro de ficcao 
+
+Fazer exercicio fisico todos os dias 
+
+Colocar em ordem meia de gavetas
+
+Buscar Maria na escola
+
+
+/// NEGADAS - CARÁCTER ESPECIAL ///
+
+Escrever a minha redação
+
+Participar as 18:33 da coletiva de imprensa
+
+Terminar a produção do meu vídeo clipe
+
+/// NEGADAS – REQUISIÇÃO VAZIA ///
+
+
+/// NEGADAS – REQUISIÇÃO NÃO ATENDE AO TAMANHO MINIMO ///
+
+Nao achei
+
+Banana
+
+Java
+
+Spring
