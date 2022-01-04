@@ -20,7 +20,7 @@ public class TaskService {
 				, '-', '_', '/', '?', '°', 'è', 'ª', '[', ']'
 				, '{', '}', 'º', '^', '~', '´', '`', '\\', '|'
 				, ';', '.', ',', '>', '<', '¹', '²', '³', '£'
-				, '¢', '¬'};
+				, '¢', '¬', '\'', '\"'};
 
 		if (newTask.chars().count() < 10) {
 			Task t1 = new Task("Erro! Task have less 10 caracters");
