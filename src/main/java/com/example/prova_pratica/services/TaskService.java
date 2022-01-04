@@ -14,6 +14,11 @@ public class TaskService {
 	private TaskRepository taskRepo;
 
 	public ResponseEntity<Task> postTask(String task) {
+		if (task.isEmpty()) {
+			Task t1 = new Task("Erro! Task is empty");
+			return ResponseEntity.badRequest().body(t1);
+		}
+		
 		String newTask = task.trim();
 		char[] especialChar = {'@', 'á', 'à', 'é', 'ã', '#'
 				, '!', '$', '%', '&', '*', '(', ')', '+', '='
